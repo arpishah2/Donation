@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <import resource="infrastructure-context.xml"/>
+
+    <!-- ========================== -->
+    <!--   Business configuration   -->
+    <!-- ========================== -->
+
+    <bean id="userRepository" class="donation.core.repository.impl.UserRepositoryImpl"/>
+    <bean id="donationRepository" class="donation.core.repository.impl.DonationRepositoryImpl"/>
+
+    <bean id="userService" class="donation.core.service.impl.UserServiceImpl"/>
+    <bean id="donationService" class="donation.core.service.impl.DonationServiceImpl"/>
+
+</beans>
