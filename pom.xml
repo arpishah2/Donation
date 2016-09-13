@@ -16,10 +16,8 @@
 
     <modules>
         <module>donation-core</module>
-        <!--
         <module>donation-web-common</module>
         <module>donation-web-servlet-jsp</module>
-        -->
         <!-- TODO
         <module>donation-web-springmvc</module>
         <module>donation-web-tapestry</module>
