@@ -1,9 +1,10 @@
 package donation.web.servlet.user;
 
-import donation.web.form.*;
+import donation.web.common.form.LoginForm;
 import donation.web.util.*;
 import donation.core.domain.User;
 import donation.core.service.api.UserService;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -18,6 +19,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
+
 import java.io.IOException;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -72,13 +74,13 @@ public class LoginServlet extends HttpServlet {
         }
 
         //made a change here 
-        if (isInvalidEmail(email)) {
-            request.setAttribute("error", resourceBundle.getString("login.error.global.invalid"));
-        } else {
+        if (isValidEmail(email)) {
             HttpSession session = request.getSession(true);//create session
             User user = userService.getUserByEmail(email);
             session.setAttribute(Views.SESSION_USER, user);
             nextPage = "/donations";
+        } else {
+            request.setAttribute("error", resourceBundle.getString("login.error.global.invalid"));
         }
         request.getRequestDispatcher(nextPage).forward(request, response);
     }
@@ -87,12 +89,13 @@ public class LoginServlet extends HttpServlet {
         validateEmail(request, loginForm);
     }
 
-    private boolean isInvalidEmail(String email) {
+    private boolean isValidEmail(String email) {
         
         User user = userService.getUserByEmail(email);
         if(user == null)
         	return false;
-        return true;
+        else
+            return true;
     }
 
     private void validateEmail(HttpServletRequest request, LoginForm loginForm) {

@@ -17,10 +17,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-import static donation.web.util.Views.HOME_PAGE;
-
-@WebServlet(name = "HomeServlet", urlPatterns = "/donations")
-public class HomeServlet extends HttpServlet {
+@WebServlet(name = "DonationServlet", urlPatterns = "/donations")
+public class DonationServlet extends HttpServlet {
 
 	private DonationService donationService;
 
@@ -49,7 +47,7 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("doneCount", doneCount);
         request.setAttribute("donationCount", donationCount);
 		*/
-        request.getRequestDispatcher(Views.HOME_PAGE).forward(request, response);
+        request.getRequestDispatcher(Views.VIEW_DONATIONS_PAGE).forward(request, response);
     }
 
     @Override

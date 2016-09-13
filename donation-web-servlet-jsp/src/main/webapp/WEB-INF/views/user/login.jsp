@@ -29,10 +29,6 @@
                         <button type="submit" class="btn btn-primary"><i class="icon-lock icon-white"></i> Sign in</button>
                     </div>
 
-                    <div align="center">
-                        You don't have an account yet? <a href="/register">Register here for free!</a>
-                    </div>
-
                 </fieldset>
             </form>
 

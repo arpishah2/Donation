@@ -1,2 +1,2 @@
-donation/web/form/RegistrationForm.class
-donation/web/form/LoginForm.class
+donation/web/common/form/RegistrationForm.class
+donation/web/common/form/LoginForm.class

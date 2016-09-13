@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="tl" uri="http://donationlist.org/taglib" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="../common/header.jspf"%>
 
@@ -34,7 +33,7 @@
                             <td>${currentDonation.id}</td>
                             <td>${currentDonation.description}</td>
                             <td>${currentDonation.estimate}</td>
-                            <td>${currentDonation.tax_deductible}</td>
+                            <td>${currentDonation.getTaxDeductible()}</td>
                             <td>${currentDonation.year}</td>
                             <td>
                                 <a class="btn btn-mini btn-primary" href="/donations/update?donationId=${currentDonation.id}"><i class="icon-edit icon-white"></i> Edit</a>
@@ -59,13 +58,6 @@
                     </c:forEach>
 
                     </tbody>
-                    <tfoot>
-                    <tr>
-                        <td colspan="2"><div align="center">Total = <span class="badge badge-inverse">${requestScope.totalCount}</span></div></td>
-                        <td colspan="2"><div align="center">Donation = <span class="badge">${requestScope.donationCount}</span></div></td>
-                        <td colspan="2"><div align="center">Done = <span class="badge badge-success">${requestScope.doneCount}</span></div></td>
-                    </tr>
-                    </tfoot>
                 </table>
 
                 <c:if test="${empty requestScope.donationList}">

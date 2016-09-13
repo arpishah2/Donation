@@ -8,7 +8,7 @@ public class Views{
 
     public static final String PREFIX = "/WEB-INF/views";
 
-    public static final String HOME_PAGE = PREFIX + "/user/home.jsp";
+    public static final String VIEW_DONATIONS_PAGE = PREFIX + "/donate/donations.jsp";
 
     public static final String LOGIN_PAGE = PREFIX + "/user/login.jsp";
 
@@ -16,7 +16,7 @@ public class Views{
 
     public static final String REGISTER_PAGE = PREFIX + "/user/register.jsp";
 
-    public static final String CREATE_DONATION_PAGE = PREFIX + "/don/create.jsp";
+    public static final String CREATE_DONATION_PAGE = PREFIX + "/donate/create.jsp";
 
     public static final String SEARCH_PAGE = PREFIX + "/don/search.jsp";
 

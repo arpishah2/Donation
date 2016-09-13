@@ -1,5 +1,6 @@
 /home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/servlet/user/LoginServlet.java
 /home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/filter/LoginFilter.java
-/home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/servlet/user/HomeServlet.java
+/home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/servlet/user/DonationServlet.java
 /home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/util/Views.java
+/home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/servlet/user/CreateDonationServlet.java
 /home/arpi/Dropbox/workspace/donation/donation-web-servlet-jsp/src/main/java/donation/web/servlet/user/LogoutServlet.java
