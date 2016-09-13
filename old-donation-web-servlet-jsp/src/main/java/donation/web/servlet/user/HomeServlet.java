@@ -3,7 +3,6 @@ package donation.web.servlet.user;
 import donation.core.domain.Donation;
 import donation.core.domain.User;
 import donation.core.service.api.DonationService;
-import donation.web.util.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -34,7 +33,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute(Views.SESSION_USER);
+        User user = (User) session.getAttribute(DonationListUtils.SESSION_USER);
         List<Donation> donationList = donationService.getDonationListByUser(user.getId());
 
         //donation list is request scoped to avoid storing and synchronizing it in session for each CRUD operation
@@ -49,7 +48,7 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("doneCount", doneCount);
         request.setAttribute("donationCount", donationCount);
 		*/
-        request.getRequestDispatcher(Views.HOME_PAGE).forward(request, response);
+        request.getRequestDispatcher(HOME_PAGE).forward(request, response);
     }
 
     @Override

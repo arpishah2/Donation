@@ -1,7 +1,7 @@
 package donation.web.servlet.user;
 
 import donation.web.form.*;
-import donation.web.util.*;
+//import donation.web.common.util.TodoListUtils;
 import donation.core.domain.User;
 import donation.core.service.api.UserService;
 import org.springframework.context.ApplicationContext;
@@ -24,11 +24,9 @@ import java.util.Set;
 
 import static donation.web.util.Views.LOGIN_PAGE;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/", "/login", "/login.do"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login", "/login.do"})
 
 public class LoginServlet extends HttpServlet {
-
-	//private static Logger logger = Logger.getLogger("LoginServlet");
 
     private UserService userService;
 
@@ -59,7 +57,7 @@ public class LoginServlet extends HttpServlet {
 
         String email = request.getParameter("email");
 
-        LoginForm loginForm = new LoginForm();
+        loginForm = new LoginForm();
         loginForm.setEmail(email);
 
         String nextPage = LOGIN_PAGE;
@@ -77,7 +75,7 @@ public class LoginServlet extends HttpServlet {
         } else {
             HttpSession session = request.getSession(true);//create session
             User user = userService.getUserByEmail(email);
-            session.setAttribute(Views.SESSION_USER, user);
+            session.setAttribute(TodoListUtils.SESSION_USER, user);
             nextPage = "/donations";
         }
         request.getRequestDispatcher(nextPage).forward(request, response);
@@ -92,7 +90,6 @@ public class LoginServlet extends HttpServlet {
         User user = userService.getUserByEmail(email);
         if(user == null)
         	return false;
-        return true;
     }
 
     private void validateEmail(HttpServletRequest request, LoginForm loginForm) {

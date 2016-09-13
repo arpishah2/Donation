@@ -4,8 +4,6 @@ public class Views{
 	
 	private Views() {}
 
-    public static final String SESSION_USER = "user";
-
     public static final String PREFIX = "/WEB-INF/views";
 
     public static final String HOME_PAGE = PREFIX + "/user/home.jsp";

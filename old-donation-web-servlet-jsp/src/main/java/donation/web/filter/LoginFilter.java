@@ -1,7 +1,6 @@
 package donation.web.filter;
 
 import donation.core.domain.User;
-import donation.web.util.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -19,14 +18,11 @@ public class LoginFilter implements Filter {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
-		User user = (User) session.getAttribute(Views.SESSION_USER);
+		User user = (User) session.getAttribute(DonationListUtils.SESSION_USER);
 		if (user != null) {
 			chain.doFilter(request, response);
 	    } else {
-	    	request.getRequestDispatcher(Views.LOGIN_PAGE).forward(request, response);
+	    	request.getRequestDispatcher(LOGIN_PAGE).forward(request, response);
 	    }
 	}
-
-  public void destroy() {
-  }
 }
