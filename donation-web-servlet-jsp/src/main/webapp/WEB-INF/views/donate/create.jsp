@@ -15,7 +15,7 @@
                     <h1>Add a  new donation entry</h1>
                 </div>
 
-                <form id="createDonationForm" action="/donations/new.do" method="post" class="form-horizontal">
+                <form id="createDonationForm" action="/donations/create.do" method="post" class="form-horizontal">
 
                     <fieldset>
 
@@ -34,11 +34,9 @@
                         </div>
 
                         <div class="control-group">
-                            <label class="control-label" for="year">Enter year(yyyy):</label>
+                            <label class="control-label" for="year">Year(yyyy):</label>
                             <div class="controls">
-                                <select id="priority" name="priority">
-                                  <input type="text" id="year" name="year" value="${requestScope.today}" required="required" />
-                                </select>
+                                <input type="text" id="year" name="year" value="${requestScope.today}" required="required" />
                             </div>
                         </div>
 

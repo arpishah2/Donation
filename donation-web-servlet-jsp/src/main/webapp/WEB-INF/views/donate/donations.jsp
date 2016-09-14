@@ -10,7 +10,7 @@
         </div>
         <div class="span9">
             <div class="well">
-                <div class="page-header">
+                <div class="page-header"sidebarBBT>
                     <h1>My Donation list</h1>
                 </div>
 

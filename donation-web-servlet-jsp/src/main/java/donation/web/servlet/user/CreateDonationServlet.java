@@ -5,6 +5,7 @@ package donation.web.servlet.user;
  */
 
 //import donation.web.common.util.DonationListUtils;
+
         import donation.core.domain.Donation;
         import donation.core.domain.User;
         import donation.core.service.api.DonationService;
@@ -48,8 +49,9 @@ public class CreateDonationServlet extends HttpServlet {
 
         String description = request.getParameter("description");
         String estimate = request.getParameter("estimate");
+        String year = request.getParameter("year");
 
-        Donation donation = new Donation(user.getId(), description, Float.parseFloat(estimate));
+        Donation donation = new Donation(user.getId(), description, Float.parseFloat(estimate), Integer.parseInt(year));
         donationService.create(donation);
         request.getRequestDispatcher("/donations").forward(request, response);
 

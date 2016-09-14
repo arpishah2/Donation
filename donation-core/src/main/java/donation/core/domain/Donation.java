@@ -36,6 +36,14 @@ public class Donation implements Serializable {
 		this.tax_deductible = estimate*DEDUCTIBLE_RATE;
 	}
 
+	public Donation(long userId, String desc, float estimate, int year) {
+		this.userId = userId;
+		this.description = desc;
+		this.estimate = estimate;
+		this.tax_deductible = estimate*DEDUCTIBLE_RATE;
+		this.year = year;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -84,7 +92,8 @@ public class Donation implements Serializable {
 		sb.append(", userId=").append(userId);
 		sb.append(", description='").append(description).append('\'');
 		sb.append(", estimatedValue=").append(estimate);
-		sb.append(", taxDeductibel=").append(tax_deductible);
+		sb.append(", taxDeductible=").append(tax_deductible);
+		sb.append(", Year=").append(year);
 		sb.append('}');
 		return sb.toString();
 	}
